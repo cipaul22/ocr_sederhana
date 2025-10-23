@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   final String ocrText;
@@ -17,6 +18,16 @@ class ResultScreen extends StatelessWidget {
             style: const TextStyle(fontSize: 18),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const HomeScreen()),
+            (route) => false,
+          );
+        },
+        child: const Icon(Icons.home),
       ),
     );
   }
